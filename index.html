@@ -235,7 +235,7 @@
             animation: none;
         }
 
-        /* Header - FIXED FOR MOBILE */
+        /* Header - FIXED MOBILE MENU */
         header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -1118,7 +1118,7 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive - FIXED MOBILE HEADER */
+        /* Responsive - FIXED MOBILE MENU */
         @media (max-width: 1200px) {
             .hero h1 {
                 font-size: 4rem;
@@ -1134,6 +1134,7 @@
                 font-size: 2.8rem;
             }
             
+            /* FIXED MOBILE NAVIGATION */
             .nav-links {
                 position: fixed;
                 top: 90px;
@@ -1142,18 +1143,20 @@
                 background: white;
                 flex-direction: column;
                 align-items: center;
-                padding: 30px 0;
                 gap: 0;
-                height: 0;
+                max-height: 0;
                 overflow: hidden;
-                transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
                 z-index: 999;
+                opacity: 0;
             }
 
             .nav-links.active {
-                height: auto;
+                max-height: 500px;
+                opacity: 1;
                 padding: 30px 0;
+                border-top: 1px solid var(--gray-light);
             }
 
             .nav-links li {
@@ -1167,6 +1170,11 @@
                 border-bottom: 1px solid var(--gray-light);
                 display: block;
                 width: 100%;
+                font-size: 1.1rem;
+            }
+
+            .nav-links a:hover {
+                background: var(--light);
             }
 
             .mobile-menu-btn {
@@ -1221,6 +1229,11 @@
             .header-cta {
                 gap: 10px;
             }
+            
+            /* Mobile menu stays at top */
+            .nav-links {
+                top: 90px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1273,6 +1286,11 @@
                 width: 100%;
                 max-width: 300px;
             }
+            
+            /* Adjust mobile menu position for smaller screens */
+            .nav-links {
+                top: 80px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1298,6 +1316,11 @@
             
             .header-cta .phone-number i {
                 font-size: 1.2rem;
+            }
+            
+            /* Mobile menu for very small screens */
+            .nav-links {
+                top: 75px;
             }
         }
 
@@ -1891,11 +1914,12 @@
     </footer>
 
     <script>
-        // Mobile Menu Toggle
+        // Mobile Menu Toggle - FIXED
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
         
-        mobileMenuBtn.addEventListener('click', () => {
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent event from bubbling up
             navLinks.classList.toggle('active');
             mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
                 ? '<i class="fas fa-times"></i>' 
@@ -1908,6 +1932,25 @@
                 navLinks.classList.remove('active');
                 mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             });
+        });
+        
+        // Close mobile menu when clicking outside - FIXED
+        document.addEventListener('click', (e) => {
+            const isClickInsideMenu = navLinks.contains(e.target);
+            const isClickOnMenuButton = mobileMenuBtn.contains(e.target);
+            
+            if (!isClickInsideMenu && !isClickOnMenuButton && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+        
+        // Also close menu on window resize (optional but good practice)
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 992) {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
         });
         
         // Smooth scrolling
