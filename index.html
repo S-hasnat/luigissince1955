@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luigi's Restaurant | Home of the Best Thin Crust Pizza Since 1955 | Flint, MI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍕</text></svg>">
+    <style>
+        :root {
+            --primary: #C41E3A;
+            --primary-light: #E63946;
+            --primary-dark: #9A1A2C;
+            --secondary: #FFD700;
+            --accent: #669BBC;
+            --dark: #1A1A1A;
+            --dark-light: #2D2D2D;
+            --light: #F8F9FA;
+            --gray: #6C757D;
+            --gray-light: #E9ECEF;
+            --whatsapp: #25D366;
+            --whatsapp-dark: #1DA851;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --radius: 12px;
+            --container-width: 1400px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+            font-weight: 400;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-subtitle {
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-desc {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 30px auto 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 16px 38px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(196, 30, 58, 0.25);
+        }
+
+        .btn:hover:before {
+            left: 0;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            color: white;
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, var(--whatsapp) 0%, var(--whatsapp-dark) 100%);
+            color: white;
+            padding: 16px 38px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.25);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-whatsapp:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--whatsapp-dark) 0%, var(--whatsapp) 100%);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.35);
+            color: white;
+        }
+
+        .btn-whatsapp:hover:before {
+            left: 0;
+        }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 70px;
+            height: 70px;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--whatsapp) 0%, var(--whatsapp-dark) 100%);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            animation: none;
+        }
+
+        /* Header - FIXED FOR MOBILE */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            padding: 15px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 15px;
+            z-index: 1001;
+        }
+
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 15px rgba(196, 30, 58, 0.3);
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .logo-text h1 span {
+            color: var(--primary);
+        }
+
+        .logo-text .tagline {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 3px;
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            left: 0;
+            bottom: 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .phone-number {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--dark);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .phone-number:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--dark);
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: var(--light);
+            z-index: 1001;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 200px 0 150px;
+            margin-top: 90px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            color: white;
+            margin-bottom: 25px;
+            line-height: 1.1;
+        }
+
+        .hero h1 span {
+            color: var(--secondary);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+
+        .feature-item {
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin: 0 auto 15px;
+        }
+
+        .feature-text {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Menu Sections */
+        .menu-category {
+            margin-bottom: 80px;
+        }
+
+        .category-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--gray-light);
+        }
+
+        .category-title h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .category-title i {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        /* Homemade Soups - 3 Cards Side by Side - FIXED BUTTON ALIGNMENT */
+        .soup-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 992px) {
+            .soup-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .soup-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .soup-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .soup-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .soup-img {
+            height: 200px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .soup-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .soup-card:hover .soup-img img {
+            transform: scale(1.1);
+        }
+
+        .soup-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .soup-content h4 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .soup-content p {
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .soup-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .soup-content .btn {
+            padding: 12px 25px;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        /* Fresh Salads with Background Image */
+        .salads-section {
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 80px 0;
+            border-radius: var(--radius);
+            margin: 60px 0;
+        }
+
+        .salads-overlay {
+            position: relative;
+            z-index: 1;
+        }
+
+        .salads-section .category-title {
+            border-bottom-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .salads-section .category-title h3 {
+            color: white;
+        }
+
+        .salads-section .category-title i {
+            color: var(--secondary);
+        }
+
+        .salads-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .salad-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .salad-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .salad-item h4 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .salad-price {
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .salad-item p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Luigi's Specialties Grid */
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .specialty-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary);
+        }
+
+        .specialty-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .specialty-card h4 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .specialty-card ul {
+            list-style: none;
+        }
+
+        .specialty-card li {
+            color: var(--gray);
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .specialty-card li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Pizza & Sandwiches Section */
+        .pizza-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: var(--radius);
+            padding: 60px;
+            margin: 60px 0;
+        }
+
+        /* Toppings Section */
+        .toppings-section {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin: 40px 0;
+        }
+
+        .toppings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .topping-item {
+            background: var(--light);
+            padding: 15px;
+            border-radius: var(--radius);
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .topping-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .topping-note {
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+            color: var(--gray);
+        }
+
+        /* Pizza Sizes */
+        .sizes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        @media (max-width: 768px) {
+            .sizes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .size-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .size-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .size-name {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .size-dimension {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .size-desc {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Sandwiches */
+        .sandwiches-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .sandwich-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .sandwich-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .sandwich-card h4 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 10px;
+        }
+
+        .sandwich-card ul {
+            list-style: none;
+        }
+
+        .sandwich-card li {
+            color: var(--gray);
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .sandwich-card li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Customer Reviews - 3 Cards Side by Side */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 992px) {
+            .reviews-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .review-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .review-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .review-card:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.1;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .review-content {
+            margin-bottom: 25px;
+            line-height: 1.8;
+            color: var(--gray);
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+            flex-grow: 1;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-top: 1px solid var(--gray-light);
+            padding-top: 20px;
+        }
+
+        .review-author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--primary);
+            flex-shrink: 0;
+        }
+
+        .review-author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .review-author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        .review-author-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .review-rating {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* Contact Section - FIXED */
+        .contact-section {
+            background: var(--dark);
+            color: white;
+            padding: 100px 0;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: var(--radius);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-item {
+            display: flex;
+            margin-bottom: 30px;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .contact-details p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        .hours-list {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .hours-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Map Section */
+        .map-container {
+            margin-top: 30px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .map-placeholder {
+            background: rgba(255, 255, 255, 0.1);
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .map-placeholder i {
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.5;
+        }
+
+        .map-placeholder p {
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background: #111;
+            color: white;
+            padding: 80px 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: white;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive - FIXED MOBILE HEADER */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.8rem;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 90px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 30px 0;
+                gap: 0;
+                height: 0;
+                overflow: hidden;
+                transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                height: auto;
+                padding: 30px 0;
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+                margin: 0;
+            }
+
+            .nav-links a {
+                padding: 20px;
+                border-bottom: 1px solid var(--gray-light);
+                display: block;
+                width: 100%;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .header-cta .btn {
+                display: none;
+            }
+            
+            .phone-number span {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 150px 0 100px;
+                margin-top: 70px;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .pizza-section {
+                padding: 40px 30px;
+            }
+
+            .hero-features {
+                gap: 30px;
+            }
+            
+            .header-container {
+                padding: 0 15px;
+            }
+            
+            .header-cta {
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                padding: 30px 20px;
+            }
+
+            .whatsapp-float {
+                width: 60px;
+                height: 60px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-float i {
+                font-size: 1.8rem;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.5rem;
+            }
+            
+            .logo-text .tagline {
+                font-size: 0.75rem;
+            }
+            
+            .header-cta .phone-number {
+                font-size: 0.9rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-buttons .btn,
+            .hero-buttons .btn-whatsapp {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                gap: 10px;
+            }
+            
+            .logo-img {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.3rem;
+            }
+            
+            .mobile-menu-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.3rem;
+            }
+            
+            .header-cta .phone-number i {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+        .stagger-5 { transition-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#home" class="logo">
+                <div class="logo-img">
+                    <i class="fas fa-pizza-slice"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Luigi's <span>Restaurant</span></h1>
+                    <div class="tagline">Best Thin Crust Pizza Since 1955</div>
+                </div>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#favorites">Luigi's Favorites</a></li>
+                <li><a href="#pizza">Pizza & Sandwiches</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            
+            <div class="header-cta">
+                <a href="tel:8102349545" class="phone-number">
+                    <i class="fas fa-phone"></i>
+                    <span>(810) 234-9545</span>
+                </a>
+                <a href="https://wa.me/8801673346203" class="btn btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Order Now
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/8801673346203?text=Hello%20Luigi's%20Restaurant!%20I'd%20like%20to%20place%20an%20order." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <div class="hero-tagline">Home of the Best Thin Crust Pizza Since 1955</div>
+                <h1>Authentic Italian<br><span>Family Recipes</span></h1>
+                <p>A local tradition since 1955, our pizza is baked in brick ovens for authentic Luigi's Restaurant flavor. Our family atmosphere provides a comfortable and relaxed setting.</p>
+                
+                <div class="hero-buttons">
+                    <a href="#favorites" class="btn">
+                        <i class="fas fa-utensils"></i> View Menu
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <i class="fas fa-calendar"></i> Book a Table
+                    </a>
+                    <a href="https://wa.me/8801673346203" class="btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Order Now
+                    </a>
+                </div>
+
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-glass-cheers"></i>
+                        </div>
+                        <div class="feature-text">Catering Available</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <div class="feature-text">Gift Certificates</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="feature-text">Family Atmosphere</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Luigi's Favorites Section -->
+    <section id="favorites" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Our Specialties</span>
+                <h2 class="section-title">Luigi's Favorites</h2>
+                <p class="section-desc">Home of the Best Thin Crust Pizza Since 1955. Discover our most popular dishes that have delighted generations of customers.</p>
+            </div>
+
+            <!-- Homemade Soups - 3 Cards Side by Side - FIXED BUTTON ALIGNMENT -->
+            <div class="menu-category fade-in">
+                <div class="category-title">
+                    <i class="fas fa-bowl-hot"></i>
+                    <h3>Homemade Soups</h3>
+                </div>
+                <p style="color: var(--gray); margin-bottom: 30px; text-align: center; font-size: 1.1rem;">A great start to any meal. Made fresh daily with our secret family recipes.</p>
+                
+                <div class="soup-grid">
+                    <div class="soup-card">
+                        <div class="soup-img">
+                            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Homemade Soup">
+                        </div>
+                        <div class="soup-content">
+                            <h4>Daily Soup Special</h4>
+                            <p>Freshly made daily with seasonal ingredients. Served with our homemade bread.</p>
+                            <div class="soup-price">$5.99</div>
+                            <a href="https://wa.me/8801673346203?text=Order%20Daily%20Soup%20Special" class="btn">
+                                <i class="fab fa-whatsapp"></i> Order Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="soup-card">
+                        <div class="soup-img">
+                            <img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Italian Wedding Soup">
+                        </div>
+                        <div class="soup-content">
+                            <h4>Italian Wedding Soup</h4>
+                            <p>Traditional Italian soup with meatballs, vegetables, and pasta in rich broth.</p>
+                            <div class="soup-price">$6.99</div>
+                            <a href="https://wa.me/8801673346203?text=Order%20Italian%20Wedding%20Soup" class="btn">
+                                <i class="fab fa-whatsapp"></i> Order Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="soup-card">
+                        <div class="soup-img">
+                            <img src="https://images.unsplash.com/photo-1578474846511-04ba529f0b88?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="ZAP Lunch Buffet">
+                        </div>
+                        <div class="soup-content">
+                            <h4>ZAP Lunch Buffet</h4>
+                            <p>Homemade Soup and Antipasto Buffet with Beverage Included.</p>
+                            <div class="soup-price">$12.99</div>
+                            <p style="font-size: 0.9rem; color: var(--primary); margin-bottom: 15px;"><strong>Mon-Fri: 11am-3pm</strong></p>
+                            <a href="https://wa.me/8801673346203?text=Order%20ZAP%20Lunch%20Buffet" class="btn">
+                                <i class="fab fa-whatsapp"></i> Order Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fresh Salads with Background Image -->
+            <div class="salads-section">
+                <div class="salads-overlay">
+                    <div class="category-title">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Fresh Salads</h3>
+                    </div>
+                    
+                    <div class="salads-grid">
+                        <div class="salad-item">
+                            <h4>Large Antipasto <span class="salad-price">$10.99</span></h4>
+                            <p>Generous portion of Italian meats, cheeses, and fresh vegetables.</p>
+                        </div>
+                        
+                        <div class="salad-item">
+                            <h4>Greek Salad <span class="salad-price">$8.99</span></h4>
+                            <p>Fresh greens, tomatoes, olives, feta cheese, and house dressing.</p>
+                        </div>
+                        
+                        <div class="salad-item">
+                            <h4>Chicken Caesar <span class="salad-price">$9.99</span></h4>
+                            <p>Crisp romaine, grilled chicken, parmesan, and Caesar dressing.</p>
+                        </div>
+                        
+                        <div class="salad-item">
+                            <h4>Tossed Salad <span class="salad-price">$6.99</span></h4>
+                            <p>Fresh mixed greens with your choice of dressing.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px; text-align: center;">
+                        <p style="color: rgba(255, 255, 255, 0.9); font-style: italic;">*Your Choice - 3 Bread Sticks or Garlic Toast with any salad</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Luigi's Specialties - 3 Cards Side by Side -->
+            <div class="menu-category fade-in stagger-2">
+                <div class="category-title">
+                    <i class="fas fa-star"></i>
+                    <h3>Luigi's Specialties</h3>
+                </div>
+                
+                <div class="specialties-grid">
+                    <div class="specialty-card">
+                        <h4><i class="fas fa-bread-slice"></i> Bread Specialties</h4>
+                        <ul>
+                            <li>1/4 Loaf Italian Bread</li>
+                            <li>Garlic Bread</li>
+                            <li>With Cheese</li>
+                            <li>With Ham or Pepperoni & Cheese</li>
+                            <li>(8) Soft & Hot Bread Sticks</li>
+                            <li>(2) Sides of Meatballs with Baked Cheese</li>
+                            <li>(2) Links of Italian Sausage with Baked Cheese</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="specialty-card">
+                        <h4><i class="fas fa-drumstick-bite"></i> El Toro's Favorites</h4>
+                        <ul>
+                            <li>Chicken Strip with Fries</li>
+                            <li>Chicken Wings (10) Plain, BBQ or Hot</li>
+                            <li>French Fries Full or Half</li>
+                            <li>Cheese Stick (6)</li>
+                            <li>Breaded Cauliflower</li>
+                            <li>Breaded Mushrooms</li>
+                            <li>Onion Rings</li>
+                            <li>Combo Sampler</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="specialty-card">
+                        <h4><i class="fas fa-child"></i> Children's Menu*</h4>
+                        <ul>
+                            <li>Grilled Cheese with Fries</li>
+                            <li>Spaghetti with Salad or Cottage Cheese</li>
+                            <li>Chicken Strip with Fries</li>
+                            <li>Burger – No Bun with Fries</li>
+                            <li><em>Add .50 for Cheese or Bun</em></li>
+                        </ul>
+                        <p style="margin-top: 15px; color: var(--gray); font-size: 0.9rem; font-style: italic;">*Dine In Only</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pizza & Sandwiches Section -->
+    <section id="pizza" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Italian Classics</span>
+                <h2 class="section-title">Pizza & Sandwiches</h2>
+                <p class="section-desc">Authentic thin crust pizza and delicious sandwiches made with the finest ingredients.</p>
+            </div>
+
+            <!-- Pizza Section Container -->
+            <div class="pizza-section fade-in">
+                <!-- Pizza Toppings -->
+                <div class="toppings-section">
+                    <h3 style="text-align: center; margin-bottom: 20px; color: var(--dark);">Pizza Toppings</h3>
+                    <div class="toppings-grid">
+                        <div class="topping-item">Anchovies</div>
+                        <div class="topping-item">Bacon</div>
+                        <div class="topping-item">Green Peppers</div>
+                        <div class="topping-item">Ham</div>
+                        <div class="topping-item">Hamburger</div>
+                        <div class="topping-item">Mushrooms</div>
+                        <div class="topping-item">Green/Black Olives</div>
+                        <div class="topping-item">Onions</div>
+                        <div class="topping-item">Pepperoni</div>
+                        <div class="topping-item">Sausage</div>
+                        <div class="topping-item">Extra Cheese</div>
+                        <div class="topping-item">Pineapple</div>
+                        <div class="topping-item">Tomatoes</div>
+                        <div class="topping-item">Pepper Rings</div>
+                        <div class="topping-item">Chicken*</div>
+                        <div class="topping-item">Feta Cheese</div>
+                        <div class="topping-item">Red Onions</div>
+                        <div class="topping-item">Salami</div>
+                        <div class="topping-item">Jalapeño</div>
+                    </div>
+                    <p class="topping-note">*Chicken Considered Double Item</p>
+                </div>
+
+                <!-- Pizza Sizes -->
+                <div class="sizes-grid fade-in stagger-1">
+                    <div class="size-card">
+                        <div class="size-name">Personal</div>
+                        <div class="size-dimension">8"</div>
+                        <div class="size-desc">Perfect for one person</div>
+                    </div>
+                    <div class="size-card">
+                        <div class="size-name">Medium</div>
+                        <div class="size-dimension">14"</div>
+                        <div class="size-desc">8 Slices - Great for sharing</div>
+                    </div>
+                    <div class="size-card">
+                        <div class="size-name">Super</div>
+                        <div class="size-dimension">18"</div>
+                        <div class="size-desc">16 Slices - For parties</div>
+                    </div>
+                </div>
+
+                <!-- Special Pizza Items -->
+                <div style="margin-top: 40px;">
+                    <h3 style="text-align: center; margin-bottom: 30px; color: var(--dark); font-size: 1.8rem;">Our Signature Pizzas</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+                        <div style="background: white; padding: 25px; border-radius: var(--radius); box-shadow: var(--shadow);">
+                            <h4 style="color: var(--primary); margin-bottom: 10px;">Veggie Pizza</h4>
+                            <p style="color: var(--gray);">Green pepper, onions, mushroom, tomato and green olives</p>
+                            <p style="color: var(--primary); font-weight: 700; margin-top: 15px;">From $14.99</p>
+                        </div>
+                        <div style="background: white; padding: 25px; border-radius: var(--radius); box-shadow: var(--shadow);">
+                            <h4 style="color: var(--primary); margin-bottom: 10px;">All Meat Pizza</h4>
+                            <p style="color: var(--gray);">Pepperoni, sausage, hamburger, bacon and ham</p>
+                            <p style="color: var(--primary); font-weight: 700; margin-top: 15px;">From $18.99</p>
+                        </div>
+                        <div style="background: white; padding: 25px; border-radius: var(--radius); box-shadow: var(--shadow);">
+                            <h4 style="color: var(--primary); margin-bottom: 10px;">LUIGI SPECIAL</h4>
+                            <p style="color: var(--gray);">Pepperoni, Onions, Green Peppers and Mushrooms</p>
+                            <p style="color: var(--primary); font-weight: 700; margin-top: 15px;">From $16.99</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sandwiches -->
+            <div class="menu-category fade-in stagger-2">
+                <div class="category-title">
+                    <i class="fas fa-hamburger"></i>
+                    <h3>Sandwiches</h3>
+                </div>
+                
+                <div class="sandwiches-grid">
+                    <div class="sandwich-card">
+                        <h4>Classic Sandwiches</h4>
+                        <ul>
+                            <li>½ Pound Hamburger with Fries</li>
+                            <li>Pizza or Italian Sub (Grilled)</li>
+                            <li>Wraps (Turkey, Ham or Veggie)</li>
+                            <li>B.L.T.</li>
+                            <li>Fish Sandwich</li>
+                            <li>Ham & Cheese - Ask for Grilled</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sandwich-card">
+                        <h4>Italian Specialties</h4>
+                        <ul>
+                            <li>Meatball on Italian Bread</li>
+                            <li>Italian Sausage on Italian Bread</li>
+                            <li>Reuben</li>
+                            <li>Corned Beef</li>
+                            <li>Turkey Club</li>
+                            <li>Turkey</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sandwich-card">
+                        <h4>Grilled Cheese Options</h4>
+                        <ul>
+                            <li>American Cheese</li>
+                            <li>Provolone Cheese</li>
+                            <li>Swiss Cheese</li>
+                            <li>Your choice of cheese on grilled Italian bread</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section - 3 Cards Side by Side -->
+    <section id="reviews" class="section" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Testimonials</span>
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-desc">Don't just take our word for it. Here's what our customers have to say about their experience.</p>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-card fade-in">
+                    <div class="review-content">
+                        "The best pizza in Flint! We've been coming here for 20 years and the quality never changes. The thin crust is perfection and the flavors are authentic Italian."
+                    </div>
+                    <div class="review-author">
+                        <div class="review-author-img">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="John D.">
+                        </div>
+                        <div class="review-author-info">
+                            <h4>John D.</h4>
+                            <p>Regular Customer for 20 years</p>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card fade-in stagger-1">
+                    <div class="review-content">
+                        "Ordered catering for my daughter's graduation party and everyone raved about the food! The staff was incredibly helpful and the food arrived hot and fresh."
+                    </div>
+                    <div class="review-author">
+                        <div class="review-author-img">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Sarah M.">
+                        </div>
+                        <div class="review-author-info">
+                            <h4>Sarah M.</h4>
+                            <p>Catering Customer</p>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card fade-in stagger-2">
+                    <div class="review-content">
+                        "We ordered catering with Luigi's and were not disappointed. They were incredibly helpful and transparent with the process and gave us fantastic suggestions."
+                    </div>
+                    <div class="review-author">
+                        <div class="review-author-img">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Raul V.">
+                        </div>
+                        <div class="review-author-info">
+                            <h4>Raul V.</h4>
+                            <p>April 4, 2018</p>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section - FIXED -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle" style="color: var(--secondary);">Visit Us</span>
+                <h2 class="section-title" style="color: white;">Contact & Location</h2>
+                <p class="section-desc" style="color: rgba(255, 255, 255, 0.8);">Experience authentic Italian dining in the heart of Flint. Visit us today!</p>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-info fade-in">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Our Location</h4>
+                            <p>2132 Davison Rd, Flint, MI 48506</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone Number</h4>
+                            <p>(810) 234-9545</p>
+                            <a href="tel:8102349545" class="btn" style="margin-top: 10px; padding: 12px 25px;">
+                                <i class="fas fa-phone"></i> Call Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon" style="background: linear-gradient(135deg, var(--whatsapp) 0%, var(--whatsapp-dark) 100%);">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>WhatsApp Orders</h4>
+                            <p>+880 1673-346203</p>
+                            <a href="https://wa.me/8801673346203" class="btn-whatsapp" target="_blank" style="margin-top: 10px; padding: 12px 25px;">
+                                <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-info fade-in stagger-1">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Opening Hours</h4>
+                            <ul class="hours-list">
+                                <li><span>Monday - Friday</span> <span>10:00 am - 12:00 pm</span></li>
+                                <li><span>Saturday</span> <span>12:00 pm - 12:00 am</span></li>
+                                <li><span>Sunday</span> <span>12:00 pm - 10:00 pm</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Payment Methods</h4>
+                            <p>We accept all major credit cards including Visa, MasterCard, Discover, and American Express.</p>
+                        </div>
+                    </div>
+
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <p>2132 Davison Rd, Flint, MI 48506</p>
+                            <p style="font-size: 0.9rem;">Interactive map would appear here in a live website</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Luigi's Restaurant</h3>
+                    <p>Home of the Best Thin Crust Pizza Since 1955. Family recipes passed down through generations, served with love and tradition in Flint, Michigan.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-yelp"></i></a>
+                        <a href="https://wa.me/8801673346203" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#favorites"><i class="fas fa-chevron-right"></i> Luigi's Favorites</a></li>
+                        <li><a href="#pizza"><i class="fas fa-chevron-right"></i> Pizza & Sandwiches</a></li>
+                        <li><a href="#reviews"><i class="fas fa-chevron-right"></i> Customer Reviews</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact & Location</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Catering Services</h3>
+                    <p>Perfect for: Rehearsal Dinners, Retirement Parties, Fundraisers, Holiday Get Togethers, and more! Ask about our catering menu and party trays.</p>
+                    <a href="https://wa.me/8801673346203?text=Hello%20Luigi's%20Restaurant!%20I'd%20like%20to%20inquire%20about%20catering." class="btn" style="margin-top: 15px;">
+                        <i class="fas fa-utensils"></i> Catering Inquiry
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023 Luigi's Restaurant - Flint, Michigan. All rights reserved.</p>
+                <p style="margin-top: 10px;">Home of the Best Thin Crust Pizza Since 1955</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Fade-in animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '10px 0';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.padding = '15px 0';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Add active class to current nav link
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
